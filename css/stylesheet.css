@@ -1,0 +1,174 @@
+*
+{
+    letter-spacing: 0.5mm;
+}
+body
+{
+    background-color: #1BD25D;
+    margin: 0;
+}
+
+header
+{
+    display: flex;
+    justify-content: space-between;
+    background-color: #073618;
+    padding: 5px;
+    color: whitesmoke;
+    font-size: larger;
+    font-family: serif;
+}
+
+main
+{
+    background-color: #0d612b;
+    min-height: 100vh;
+    width: 100%;
+    padding: 10px 0;
+}
+
+main > #levels
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    margin-top: -10px;
+    color: #073618;
+    background-color: #d9d9d9;
+    border: #0d612b 10px solid;
+}
+
+#levels > span
+{
+    border: #073618 1px solid;
+}
+
+#levels > #b-level
+{
+    width: 10%;
+    background-color: #cd7f32;
+    padding: 2px;
+    text-align: center;
+}
+
+#levels > #s-level
+{
+    width: 10%;
+    background-color: #c0c0c0;
+    padding: 2px;
+    text-align: center;
+}
+
+#levels > #g-level
+{
+    width: 10%;
+    background-color: #d4a537;
+    padding: 2px;
+    text-align: center;
+}
+
+#levels > #p-level
+{
+    width: 10%;
+    background-color: #ffffff;
+    padding: 2px;
+    text-align: center;
+}
+
+#sub-main
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+#stages-child
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px;
+}
+
+
+#stage-box
+{
+    background-color:#cd7f32;
+    border: #d9d9d9 1px solid;
+    width: 65%;
+    margin: 15px auto;
+
+} 
+
+.advertisement
+{
+    margin: 10px;
+}
+
+#stages-grand-parent
+{
+    text-align: center;
+    color:#d9d9d9;
+    margin-top: 15px;
+}
+
+h3
+{
+    border: #d9d9d9 1px solid;
+    background-color: #cd7f32;
+    font-weight: 80;
+    margin: 0 auto;
+    width: 65%;
+}
+
+h4
+{
+    margin: 0;
+    font-weight: 100;
+}
+
+h5
+{
+   font-weight: 100;
+}
+
+.advertisement
+{
+    height: 35vh;
+    width: 25%;
+    color: #d9d9d9;
+    font-size: 20px;
+}
+
+.advert
+{
+    display: grid;
+    place-items: center;
+    margin: 25px 0;
+    border: #d9d9d9 1px solid;
+    height: 100%;
+
+}
+
+#people-list
+{
+    border:#cd7f32 2px solid ;
+}
+
+table
+{
+    width: 100%;
+}
+
+thead
+{
+    font-weight: bolder;
+}
+
+td
+{
+    background-color: #d9d9d9;
+    color: #073618;
+    padding: 5px;
+    text-align: left;
+}
+
+
