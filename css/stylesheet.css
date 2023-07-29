@@ -2,9 +2,10 @@
 {
     letter-spacing: 0.5mm;
 }
+
 body
 {
-    background-color: #1BD25D;
+    background-color: #d9d9d9;
     margin: 0;
 }
 
@@ -17,6 +18,8 @@ header
     color: whitesmoke;
     font-size: larger;
     font-family: serif;
+    position: sticky;
+    top: 0;
 }
 
 main
@@ -36,6 +39,8 @@ main > #levels
     color: #073618;
     background-color: #d9d9d9;
     border: #0d612b 10px solid;
+    position: sticky;
+    top: 30px;
 }
 
 #levels > span
@@ -95,12 +100,16 @@ main > #levels
     border: #d9d9d9 1px solid;
     width: 65%;
     margin: 15px auto;
+    position: sticky;
+    top: 110px;
 
 } 
 
 .advertisement
 {
     margin: 10px;
+    position: sticky;
+    top: 90px;
 }
 
 #stages-grand-parent
@@ -117,6 +126,8 @@ h3
     font-weight: 80;
     margin: 0 auto;
     width: 65%;
+    position: sticky;
+    top: 90px;
 }
 
 h4
@@ -171,4 +182,11 @@ td
     text-align: left;
 }
 
+footer
+{
+    color: whitesmoke;
+    background-color: #073618;
+    text-align: center;
+    font-size: x-small;
 
+}
