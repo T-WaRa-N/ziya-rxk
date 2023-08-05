@@ -46,11 +46,11 @@ main > #levels
 #levels > span
 {
     border: #073618 1px solid;
+    width: 190px;
 }
 
 #levels > #b-level
 {
-    width: 10%;
     background-color: #cd7f32;
     padding: 2px;
     text-align: center;
@@ -58,7 +58,6 @@ main > #levels
 
 #levels > #s-level
 {
-    width: 10%;
     background-color: #c0c0c0;
     padding: 2px;
     text-align: center;
@@ -66,7 +65,6 @@ main > #levels
 
 #levels > #g-level
 {
-    width: 10%;
     background-color: #d4a537;
     padding: 2px;
     text-align: center;
@@ -74,10 +72,19 @@ main > #levels
 
 #levels > #p-level
 {
-    width: 10%;
     background-color: #ffffff;
     padding: 2px;
     text-align: center;
+}
+
+#counts
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    color: #d9d9d9;
+    position: sticky;
+    top: 80px;
 }
 
 #sub-main
@@ -104,13 +111,6 @@ main > #levels
     top: 110px;
 
 } 
-
-.advertisement
-{
-    margin: 10px;
-    position: sticky;
-    top: 90px;
-}
 
 #stages-grand-parent
 {
@@ -147,6 +147,9 @@ h5
     width: 25%;
     color: #d9d9d9;
     font-size: 20px;
+    margin: 10px;
+    position: sticky;
+    top: 90px;
 }
 
 .advert
@@ -154,19 +157,51 @@ h5
     display: grid;
     place-items: center;
     margin: 25px 0;
-    border: #d9d9d9 1px solid;
+    border: red 3px solid;
     height: 100%;
+    text-align: center;
+    color: yellow;
 
 }
 
 #people-list
 {
-    border:#cd7f32 2px solid ;
+    display: flex;
+    flex-direction: column;
 }
 
 table
 {
     width: 100%;
+    border:#cd7f32 3px solid;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+input
+{
+    text-align: center;
+    margin: 3px;
+    height: 30px;
+}
+
+#cell-number
+{
+    background-color: #d9d9d9;
+    border-radius: 8px;
+}
+
+#click-enlist
+{
+    background-color: #cd7f32;
+    border-radius: 8px;
+}
+
+#explanation
+{
+    background-color: #073618;
+    border-radius: 8px;
+    color: #d9d9d9;
 }
 
 thead
@@ -182,6 +217,12 @@ td
     text-align: left;
 }
 
+td > span
+{
+    justify-content: center;
+    margin-left: 65px;
+}
+
 footer
 {
     color: whitesmoke;
@@ -189,4 +230,111 @@ footer
     text-align: center;
     font-size: x-small;
 
+}
+
+
+
+/* reponsive section found below for maximum width equals to 992px*/
+
+@media screen and (max-width: 992px) 
+{
+    #sub-main
+    {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .advertisement
+    {
+        height: 30vh;
+        width: 98%;
+        color: #d9d9d9;
+        font-size: 20px;
+        margin: 50px 10px;
+        position: sticky;
+        top: 100px;
+       
+    }
+
+    #levels > span
+    {
+        border: #073618 1px solid;
+        width: 100px;
+    }   
+
+    #levels > #b-level
+    {
+        background-color: #cd7f32;
+        padding: 2px;
+        text-align: center;
+        margin: 5px;
+        width: 98%;
+    }
+
+    #levels > #s-level
+    {
+        background-color: #c0c0c0;
+        padding: 2px;
+        text-align: center;
+        margin: 5px;
+        width: 98%;
+    }
+
+    #levels > #g-level
+    {
+        background-color: #d4a537;
+        padding: 2px;
+        text-align: center;
+        margin: 5px;
+        width: 98%;
+    }
+
+    #levels > #p-level
+    {
+        background-color: #ffffff;
+        padding: 2px;
+        text-align: center;
+        margin: 5px;
+        width: 98%;
+    }
+
+    #people-list
+    {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    #counts
+    {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        color: #d9d9d9;
+        position: sticky;
+        top: 80px;
+    }
+
+}
+
+/* when maximum width is equal to 608px */
+@media screen and (max-width: 608px)
+{
+    #levels
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #counts
+    {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        color: #d9d9d9;
+        position: sticky;
+        top: 190px;
+    }
 }
