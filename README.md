@@ -8,26 +8,26 @@ vanilla javaScript and jquery technologies and the node is handling the backend 
 handle records.
 ```
 # Landing Page
-![Ziya-rxk home-page](./images/ZiyaRXK%20desktop.png)
+![Ziya-rxk home-page](./images/ZiyaRXK.png)
 ## Progress Report
 - [x] Wireframe done
   - [ ] Wireframe updated
 - [x] Frontend 
   - [x] Landing page
-  - [] 35 seconds video explaining how the app works
-  - [] Advertizing Elements ready and interactive (jQuery)
-  - [] User information recording feature (javaScript)
-  - [] Administrator feature such as login, delete and adding of a member
-  - [] Navigating through all the level pages
-  - [] Database functionality
-  - [] Language options
-  - [] Responsive frontend
-  - [] Advert section with sliding pictures
-  - [] Built and Deployed
+  - [ ] 35 seconds video explaining how the app works
+  - [ ] Advertizing Elements ready and interactive (jQuery)
+  - [ ] User information recording feature (javaScript)
+  - [ ] Administrator feature such as login, delete and adding of a member
+  - [ ] Navigating through all the level pages
+  - [ ] Database functionality
+  - [ ] Language options
+  - [ ] Responsive frontend
+  - [ ] Advert section with sliding pictures
+  - [ ] Built and Deployed
 
-- [] Backend
-  - [] Started
-  - [] Connected to a database
+- [ ] Backend
+  - [ ] Started
+  - [ ] Connected to a database
   - [x] Processing intered cell number in request
   - [ ] Refactoring backend codebase
   - [ ] Built and Deployed
