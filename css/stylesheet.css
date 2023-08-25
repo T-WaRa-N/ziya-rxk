@@ -77,6 +77,12 @@ main > #levels
     text-align: center;
 }
 
+a
+{
+    text-decoration: none;
+    color: #073618;
+}
+
 #counts
 {
     display: flex;

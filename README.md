@@ -1,9 +1,7 @@
 # No Loan-Sharks - Mashonisa siyabachitha 
 ## Short description about this web application
 ```
-The purpose of this application interface is to take care of people's needs by assisting in removing the toll 
-caused by the loansharks on our people. It is a collaborative platform where every one gets a fair chance.
-Using phone numbers as form of identity is the approach chosen by the platform. The plaform is developed using
+Omatshonisa the loan-sharks siyabachitha. Transperancy and Trust is the rule and the heart of the platform. The Web Application is developed using
 vanilla javaScript and jquery technologies and the node is handling the backend process. NoSQL data base is going to
 handle records.
 ```
@@ -13,7 +11,7 @@ handle records.
 - [x] Wireframe done
   - [ ] Wireframe updated
 - [x] Frontend 
-  - [x] Landing page
+  - [white_check_mark] Landing page
   - [ ] 35 seconds video explaining how the app works
   - [ ] Advertizing Elements ready and interactive (jQuery)
   - [ ] User information recording feature (javaScript)
