@@ -90,7 +90,7 @@ a
     padding: 10px;
     color: #d9d9d9;
     position: sticky;
-    top: 80px;
+    top: 85px;
 }
 
 #sub-main
@@ -320,27 +320,7 @@ footer
         padding: 10px;
         color: #d9d9d9;
         position: sticky;
-        top: 80px;
+        top: 85px;
     }
 
-}
-
-/* when maximum width is equal to 608px */
-@media screen and (max-width: 608px)
-{
-    #levels
-    {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #counts
-    {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-        color: #d9d9d9;
-        position: sticky;
-        top: 190px;
-    }
 }
