@@ -4,24 +4,27 @@
         <link href="./css/stylesheet.css" rel="stylesheet">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="./js/bronze_level.js" defer></script>
+
         <title>bronze-level</title>
     </head>
     <body>
         <header>
-            <span>Xhosa</span>
+            <span>Join</span>
             <span>Ziya-RXK</span>
-            <span>login</span>
+            <span>Login</span>
         </header>
         <main>
-            <div id="levels">
+            <div id="levels"> <!--navigation levels-->
                 <span id="b-level"><a href="#">Bronze</a></span>
                 <span id="s-level"><a href="silver.html">Silver</a></span>
                 <span id="g-level"><a href="gold.html">Gold</a></span>
                 <span id="p-level"><a href="platinum.html">Platinum</a></span>
             </div>
             <div id="counts">
-                <div>BCOC: <span>0</span></div>
-                <div>TCOC: <span>0</span></div> <!--cash out count-->
+                <div>BCOC: <span id="bcoc">0</span></div> <!--bronze cash out count-->
+                <img src="./images/logo.png"/>
+                <div>TBCOC: <span id="btcoc">0</span></div> <!-- total cash out count-->
             </div>
             <div id="sub-main">
                 <div class="advertisement">
@@ -30,19 +33,8 @@
                 <div id="stages-grand-parent">
                     <h3>This is Bronze Level</h3>
                     <div id="stages-parent">
-                        <div 
-                            id="stage-box" 
-                            style=
-                            "
-                                background-color:#cd7f32;
-                                border: #d9d9d9 1px solid;
-                                width: 65%;
-                                margin: 15px auto;
-                                position: sticky;
-                                top: 110px;
-                            "
-                        >
-                            <h4>STAGE 1</h4>
+                        <div id="stage-box">
+                            <h4 id="b-stage">STAGE 1</h4>
                             <div id="stages-child">
                                 <div id="stage-1">
                                     <h5>STAGE 1</h5>
@@ -50,157 +42,157 @@
                                 </div>
                                 <div id="stage-2">
                                     <h5>STAGE 2</h5>
-                                    <p>R0.5K</p>
+                                    <h5>R0.5K</h5>
                                 </div>
                                 <div id="stage-3">
                                     <h5>STAGE 3</h5>
-                                    <p>R0.8K</p>
+                                    <h5>R0.75K</h5>
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <span>ON GOING UPDATES 0/26 (26 PEOPLE NEEDED TO CASHING OUT)</span>
+                            <span style="font-size: x-small;">SYSTEM UPDATES 0/26 <br/>(100% EMPTY BEFORE TAKE-OFF AND CASH-OUT)</span>
                             <div id="people-list">
-                                <table>
+                                <table id="bronze-tb">
                                     <thead >
-                                      <td>BOOKED</td>
+                                      <td>YOUR ID</td>
                                       <td>TRIPS</td>
                                       <td>STATUS</td>
                                     </thead>
-                                    <tr>
-                                      <td>1.<span></span></td>
-                                      <td><span></span></td>
-                                      <td><span></span></td>
+                                    <tr id="r1">
+                                      <td><span id="11"></span></td>
+                                      <td><span id="12"></span></td>
+                                      <td><span id="13"></span></td>
+                                    </tr>
+                                    <tr id="r2">
+                                      <td><span id="21"></span></td>
+                                      <td><span id="22"></span></td>
+                                      <td><span id="23"></span></td>
+                                    </tr>
+                                    <tr id="r3">
+                                        <td><span id="31"></span></td>
+                                        <td><span id="32"></span></td>
+                                        <td><span id="33"></span></td>
+                                    </tr>
+                                    <tr id="r4">
+                                        <td><span id="41"></span></td>
+                                        <td><span id="42"></span</td>
+                                        <td><span id="43"></span></td>
+                                    </tr>
+                                    <tr id="r5">
+                                        <td><span id="51"></span></td>
+                                        <td><span id="52"></span></td>
+                                        <td><span id="53"></span></td>
+                                    </tr>
+                                    <tr id="r6">
+                                        <td><span id="61"></span></td>
+                                        <td><span id="62"></span></td>
+                                        <td><span id="63"></span></td>
+                                    </tr>
+                                    <tr id="r7">
+                                        <td><span id="71"></span></td>
+                                        <td><span id="72"></span></td>
+                                        <td><span id="73"></span></td>
+                                    </tr>
+                                    <tr id="r8">
+                                        <td><span id="81"></span></td>
+                                        <td><span id="82"></span></td>
+                                        <td><span id="83"></span></td>
+                                    </tr>
+                                    <tr id="r9">
+                                        <td><span id="91"></span></td>
+                                        <td><span id="92"></span></td>
+                                        <td><span id="93"></span></td>
+                                    </tr>
+                                    <tr id="r10">
+                                        <td><span id="101"></span></td>
+                                        <td><span id="102"></span></td>
+                                        <td><span id="103"></span></td>
+                                    </tr>
+                                    <tr id="r11">
+                                        <td><span id="111"></span></td>
+                                        <td><span id="112"></span></td>
+                                        <td><span id="113"></span></td>
+                                    </tr>
+                                    <tr id="r12">
+                                        <td><span id="121"></span></td>
+                                        <td><span id="122"></span></td>
+                                        <td><span id="123"></span></td>
+                                    </tr>
+                                    <tr id="r13">
+                                        <td><span id="131"></span></td>
+                                        <td><span id="132"></span></td>
+                                        <td><span id="133"></span></td>
+                                    </tr>
+                                    <tr id="r14">
+                                        <td><span id="141"></span></td>
+                                        <td><span id="142"></span></td>
+                                        <td><span id="143"></span></td>
+                                    </tr>
+                                    <tr id="r15">
+                                        <td><span id="151"></span></td>
+                                        <td><span id="152"></span></td>
+                                        <td><span id="153"></span></td>
+                                    </tr>
+                                    <tr id="r16">
+                                        <td><span id="161"></span></td>
+                                        <td><span id="162"></span></td>
+                                        <td><span id="163"></span></td>
+                                    </tr>
+                                    <tr id="r17">
+                                        <td><span id="171"></span></td>
+                                        <td><span id="172"></span></td>
+                                        <td><span id="173"></span></td>
+                                    </tr>
+                                    <tr id="r18">
+                                        <td><span id="181"></span></td>
+                                        <td><span id="182"></span></td>
+                                        <td><span id="183"></span></td>
+                                    </tr>
+                                    <tr id="r19">
+                                        <td><span id="191"></span></td>
+                                        <td><span id="192"></span></td>
+                                        <td><span id="193"></span></td>
                                     </tr>
                                     <tr>
-                                      <td>2.<span></span></td>
-                                      <td><span></span></td>
-                                      <td><span></span></td>
+                                        <td><span id="201"></span></td>
+                                        <td><span id="202"></span></td>
+                                        <td><span id="203"></span></td>
                                     </tr>
-                                    <tr>
-                                        <td>3.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
+                                    <tr id="r21">
+                                        <td><span id="211"></span></td>
+                                        <td><span id="212"></span></td>
+                                        <td><span id="213"></span></td>
                                     </tr>
-                                    <tr>
-                                        <td>4.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
+                                    <tr id="r22">
+                                        <td><span id="221"></span></td>
+                                        <td><span id="222"></span></td>
+                                        <td><span id="223"></span></td>
                                     </tr>
-                                    <tr>
-                                        <td>5.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
+                                    <tr id="r23">
+                                        <td><span id="231"></span></td>
+                                        <td><span id="232"></span></td>
+                                        <td><span id="233"></span></td>
                                     </tr>
-                                    <tr>
-                                        <td>6.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
+                                    <tr id="r24">
+                                        <td><span id="241"></span></td>
+                                        <td><span id="242"></span></td>
+                                        <td><span id="243"></span></td>
                                     </tr>
-                                    <tr>
-                                        <td>7.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
+                                    <tr id="r25">
+                                        <td><span id="251"></span></td>
+                                        <td><span id="252"></span></td>
+                                        <td><span id="253"></span></td>
                                     </tr>
-                                    <tr>
-                                        <td>8.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>9.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>10.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>11.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>12.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>13.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>14.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>15.<span></span></td>
-                                        <td><span></span></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>16.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>17.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>18.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>19.<span></span></td>
-                                        <td><span></span></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>20.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>21.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>22.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>23.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>24.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>25.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>26.<span></span></td>
-                                        <td><span></span></td>
-                                        <td><span></span></td>
+                                    <tr id="r26">
+                                        <td><span id="261"></span></td>
+                                        <td><span id="262"></span></td>
+                                        <td><span id="263"></span></td>
                                     </tr>
                                 
-                                </table>
-                                <input type="text" placeholder="ENTER YOUR CELL NUMBER HERE" value="" id="cell-number">
-                                <input type="button" value="CLICK HERE FOR YOUR CHANCE" id="click-enlist">
+                                </table><br/>
+                                <input type="number" placeholder="ENTER YOUR CELL NUMBER HERE" id="bronze-cn" onchange="cellNumberHandler()"><br/>
+                                <input type="button" value="CLICK HERE TO BE ENLISTED" id="click-enlist" onclick="enlistingFunc()"><br/>
                                 <input type="button" value="PRESS HERE FOR EXPLANATION" id="explanation">
                             </div>
                         </div>

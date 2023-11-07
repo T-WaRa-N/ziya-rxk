@@ -11,22 +11,23 @@ handle records.
 - [x] Wireframe done
   - [ ] Wireframe updated
 - [x] Frontend 
-  - [white_check_mark] Landing page
+  - [x] Landing page
   - [ ] 35 seconds video explaining how the app works
-  - [ ] Advertizing Elements ready and interactive (jQuery)
-  - [ ] User information recording feature (javaScript)
+  - [ ] Dialogues Elements ready and interactive (jQuery)
+  - [ ] User information recording feature (javaScript) for registration
   - [ ] Administrator feature such as login, delete and adding of a member
-  - [ ] Navigating through all the level pages
+  - [x] Navigating through all the level pages
   - [ ] Database functionality
-  - [ ] Language options
-  - [ ] Responsive frontend
+  - [ ] user joining
+  - [x] Responsive frontend
   - [ ] Advert section with sliding pictures
   - [ ] Built and Deployed
+  - [ ] Performances -> number, number of time played and the money made
 
 - [ ] Backend
-  - [ ] Started
+  - [ ] Started 
   - [ ] Connected to a database
-  - [x] Processing intered cell number in request
+  - [x] Processing entered cell number in request
   - [ ] Refactoring backend codebase
   - [ ] Built and Deployed
 - [x] Database

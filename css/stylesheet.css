@@ -20,6 +20,14 @@ header
     font-family: serif;
     position: sticky;
     top: 0;
+    z-index: 2;
+}
+
+img
+{
+    position: relative;
+    height: 150px;
+    width: 150px;
 }
 
 main
@@ -182,6 +190,7 @@ table
     border:#cd7f32 3px solid;
     padding: 5px;
     margin-bottom: 10px;
+    z-index: 1;
 }
 
 input
@@ -226,7 +235,7 @@ td
 td > span
 {
     justify-content: center;
-    margin-left: 65px;
+    padding-left: 10px;
 }
 
 footer
