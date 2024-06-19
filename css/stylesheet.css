@@ -49,6 +49,7 @@ main > #levels
     border: #0d612b 10px solid;
     position: sticky;
     top: 30px;
+    z-index: 2;
 }
 
 #levels > span
@@ -62,6 +63,7 @@ main > #levels
     background-color: #cd7f32;
     padding: 2px;
     text-align: center;
+    z-index: 2;
 }
 
 #levels > #s-level
@@ -121,8 +123,8 @@ a
     border: #d9d9d9 1px solid;
     width: 65%;
     margin: 15px auto;
-    position: sticky;
-    top: 110px;
+    /* position: sticky;
+    top: 110px; */
 
 } 
 
@@ -131,6 +133,7 @@ a
     text-align: center;
     color:#d9d9d9;
     margin-top: 15px;
+    z-index: 1;
 }
 
 h3
@@ -140,8 +143,8 @@ h3
     font-weight: 80;
     margin: 0 auto;
     width: 65%;
-    position: sticky;
-    top: 90px;
+    /* position: sticky;
+    top: 90px; */
 }
 
 h4

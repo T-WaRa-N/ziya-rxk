@@ -2,6 +2,7 @@
 
 //client status tracker
 const bookingList = []
+const refundMembers = []
 
 //person class and do not forget to keep the record of successful levels in the database
 class Person{
@@ -10,7 +11,7 @@ class Person{
         this.cellNumber = cellNumber;
         this.tTrips = tTrips; // total trips/all cashing out attempts
         this.sTrips = sTrips; // successful trips/successful cashout
-        this.cl = cl;         // copper level
+        this.cl = cl;         // copper level aka beginner
         this.bl = bl;
         this.gl = gl;        // gold level
         this.sl = sl;
@@ -25,7 +26,7 @@ let typedNumber = ""                                                            
 //input onchange function
 let cellNumberHandler = () => { typedNumber = cellNumberInput.value }               // function triggered by the onchange to update the typedNumber
 
-let enlistingButton = document.getElementById('click-enlist')                        // cell number enlisting button assign to the variable
+let enlistingButton = document.getElementById('click-enlist')                       // cell number enlisting button assign to the variable
 
 // cell number enlisting function
 const enlistingFunc = () => {
@@ -34,13 +35,14 @@ const enlistingFunc = () => {
         return
     } 
     else{
-        const person = new Person("", typedNumber, 0, 0, 0, 0, 0, 0)
+        const person = new Person("", typedNumber, 0, 0, 0, 0, 0, 0, 0)
         bookingList.push(person)
 
         cellNumberInput.value = ""  //clearing the input field for the cell number
     
         // Enlisting successfully booked numbers in the first column of the table
         if(bookingList.length < 26){
+            //number encoder
             for(let i = 1; i < bookingList.length + 1; i++){
                 let spanIdC1 = `${i}` + "1"
                 let spanIdC2 = `${i}` + "2"
@@ -58,12 +60,10 @@ const enlistingFunc = () => {
                 //providing the innerText for span field in the table accordingly
                 document.getElementById(spanIdC1).innerText = reversedText.slice(2, 8)
                 document.getElementById(spanIdC2).innerText = `${bookingList[i - 1].sTrips}` + '/' + `${bookingList[i - 1].tTrips}`
-                
-            
-                
+                                
             }
 
-            // status update for all passengers
+            // status update for all passengers as the list
             let listCounter = 1
             while(listCounter <= bookingList.length){
                 let spanIdC3 = `${listCounter}` + "3"
@@ -141,7 +141,7 @@ const enlistingFunc = () => {
                 let spanIdC3 = `${listCounter}` + "3"
                 
                 if (listCounter < 6){
-                    document.getElementById(spanIdC3).innerText = "landing..."
+                    document.getElementById(spanIdC3).innerText = "cashing out..."
                     listCounter++
                 }
                 else{
@@ -152,18 +152,19 @@ const enlistingFunc = () => {
             // disable the cell number input field
             cellNumberInput.disabled = true
             cellNumberInput.placeholder = "Please wait for the next cycle"
+            enlistingButton.disabled = true
 
             // remaining for the next cycle, random selection
             let remainingMembers = []
             const randomNumber = () =>  Math.floor(Math.random() * 22) + 5
             while(remainingMembers.length < 5){
                let num = randomNumber()
-              if(remainingMembers.indexOf(num) == -1){
-                remainingMembers.push(num)
-              }
+               if(remainingMembers.indexOf(num) == -1){
+                    remainingMembers.push(num)
+               }
             }
 
-            // remaining behind in the waiting roon
+            // remaining behind in the waiting room and one have a chance to cashout (this is their index)
             let waitingRoomMembers = []
             while(waitingRoomMembers.length < 4){
                 let num = randomNumber()
@@ -172,7 +173,7 @@ const enlistingFunc = () => {
                 }
             }
 
-            // putting waiting people at the end
+            // put waiting people at the end of the list
             for(let i = 0; i < 4; i++){
                 let waitingIndex = waitingRoomMembers[i]
                 let personToMoveC1 = `${waitingIndex}` + '1'
@@ -212,19 +213,21 @@ const enlistingFunc = () => {
                 }
             }
 
-            for(let i = 0; i < 26; i++){
-                let spanIdC3 = `${i + 1}` + "3"
-                if(i < 5){
-                    document.getElementById(spanIdC3).innerText = "Cashing-Out"
+            for(let i = 1; i < 27; i++){
+                let spanIdC3 = `${i}` + "3"
+                if(i < 6){
+                    document.getElementById(spanIdC3).innerText = "paid..."
                     document.getElementById(spanIdC3).style.color = "green"
                 }else{
                 
-                        if(remainingMembers.indexOf(i + 1) == -1 && waitingRoomMembers.indexOf(i + 1) == -1){
-                            document.getElementById(spanIdC3).innerText = "Getting Refund"
+                        if(remainingMembers.indexOf(i-1) == -1 && waitingRoomMembers.indexOf(i-1) == -1){
+                            document.getElementById(spanIdC3).innerText = "refunded..."
                             document.getElementById(spanIdC3).style.color = "red"
+                            refundMembers.push(bookingList[i-1])
+                            console.log(refundMembers)
 
-                        }else if(remainingMembers.indexOf(i + 1) != -1){
-                            document.getElementById(spanIdC3).innerText = "Remain Behind "    
+                        }else{
+                            document.getElementById(spanIdC3).innerText = "staying..."    
                             document.getElementById(spanIdC3).style.color = "orange"
                         }
                    }
