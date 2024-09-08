@@ -10,11 +10,27 @@
     </head>
     <body>
         <header>
-            <span>Join</span>
+            <span onclick="join.showModal()" onMouseOver="this.style.cursor='pointer'">JOIN</span>
             <span>Ziya-RXK</span>
-            <span>Login</span>
+            <span onMouseOver="this.style.cursor='pointer'">LOGIN</span>
         </header>
         <main>
+            <dialog id="join">
+                <p onclick="join.close()" onMouseOver="this.style.cursor='pointer'">&times</p>
+                <h2>Application form</h2>
+                <form id="application_form" onsubmit="apply(event)">
+                    <label for="name">Name:</label><br>
+                    <input id="name" type="text" placeholder="Please enter your name . . ." name="name" required><br><br>
+                    <label for="surname">Surname:</label><br>
+                    <input id="surname" type="text" placeholder="Please enter your surname . . ." name="surname" required><br><br>
+                    <label for="contact">Contact:</label><br>
+                    <input id="contact" type="text" pattern="\d{10}" maxlength="10" minlength="10" placeholder="Please enter the cell number you will be using . . ." name="contact" required><br><br>
+                    <label for="reference">Reference:</label><br>
+                    <input id="reference" type="text" pattern="\d{10}" maxlength="10" minlength="10" placeholder="Please enter a cell number for reference . . ." name="reference" required><br><br>
+                    <input type="submit" value="Submit" style="width: 97%; background-color: #073618; color: whitesmoke; border: none; cursor: pointer;"><br><br>
+                    <h3 id="ziya_rxk_id" style="display: flex;justify-content: center;"></h3>
+                </form>
+            </dialog>
             <div id="levels"> <!--navigation levels-->
                 <span id="b-level"><a href="#">Bronze</a></span>
                 <span id="s-level"><a href="silver.html">Silver</a></span>
@@ -211,7 +227,8 @@
                                     </tr>
                                 </table><br/>
                                 <input type="number" placeholder="ENTER CELL NUMBER AND PLAY" id="bronze-cn" onchange="cellNumberHandler()"><br/>
-                                <input type="button" value="PLAY" id="click-enlist" onclick="enlistingFunc()"><br/>
+                                <input type="button" value="PLAY" id="click-enlist" onclick="comms_to_backend()"><br/>
+                                <!-- enlistingFunc() -->
                                 <input type="button" value="HOW THIS WORKS" id="explanation">
                             </div>
                         </div>

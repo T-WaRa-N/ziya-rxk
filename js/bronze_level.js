@@ -1,4 +1,71 @@
 //bronze level javaScript file (i.e. index html file)
+let id = ""
+
+// --------code communicating to the server----------------
+const comms_to_backend = async () => {
+    const res = await fetch("http://localhost:3001/test",{
+        method:"POST",
+        headers:{
+            "content-Type":"application/json"
+        },
+        body:JSON.stringify({
+          ziyarxk:"ziyarxk frontend side just arrived"  
+        })
+    })
+    const data = await res.json()
+    if(data.server) alert(data.server)
+    else alert("No data received from ZiyaRXK server")
+} 
+
+
+const apply = async (event) => {
+    event.preventDefault()
+    const form = event.target
+    const formData = new FormData(form)
+    let number = formData.get("contact")
+    for(let j = 9; j >= 0; j--){
+        if(number[j]== '0') id +="R"
+        else if(number[j] == '1') id  +="X"
+        else if(number[j] == '2') id  +="K"
+        else if(number[j] == '5') id  +="Z"
+        else id += number[j]
+    }
+    id = id.slice(2, 8)
+    let message = `Take ID: ${id}`
+    let display_id = document.getElementById('ziya_rxk_id')
+    display_id.style.fontSize = "15px"
+    display_id.style.backgroundColor = "White"
+    display_id.innerText = message
+    const res = await fetch("http://localhost:3001/apply", {
+        method:'POST',
+        headers:{
+            "content-Type":"application/json"
+        },
+        body: JSON.stringify({
+            "name":formData.get("name"),
+            "surname":formData.get("surname"), 
+            "contact":formData.get("contact"),
+            "reference":formData.get("reference")
+        })
+    })
+    const response = await res.json()
+    if( response.server) alert(response.server)
+    else alert("No data received from ZiyaRXK server")
+    form.reset()
+    document.getElementById("join").close()
+}
+//----------------------- ---------------------
+    
+    // if (contact.length == 10){
+    //     // for(let j = 9; j >= 0; j--){
+    //     //     if(contact[j]== '0') id +="R"
+    //     //     else if(bookingList[i - 1].cellNumber[j] == '1') reversedText +="X"
+    //     //     else if(bookingList[i - 1].cellNumber[j] == '2') reversedText +="K"
+    //     //     else if(bookingList[i - 1].cellNumber[j] == '5') reversedText +="Z"
+    //     //     else reversedText += bookingList[i - 1].cellNumber[j]
+    //     // }
+    //     alert(contact)
+    // }
 
 //client status tracker
 const bookingList = []
