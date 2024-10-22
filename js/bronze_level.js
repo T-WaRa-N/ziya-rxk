@@ -17,6 +17,26 @@ const comms_to_backend = async () => {
     else alert("No data received from ZiyaRXK server")
 } 
 
+//----------------------login--------------------------
+const login = async (event) => {
+    event.preventDefault()
+    const form = event.target
+    const formData = new FormData(form)
+    const res = await fetch("http://localhost:3001/login", {
+        method:'POST',
+        headers:{
+            "content-Type":"application/json"
+        },
+        body: JSON.stringify({
+            "username":formData.get("username"), 
+            "password":formData.get("password")
+        })
+    })
+    form.reset()
+    document.getElementById("signin").close()
+    
+}
+
 
 const apply = async (event) => {
     event.preventDefault()

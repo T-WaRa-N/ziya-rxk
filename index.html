@@ -12,7 +12,7 @@
         <header>
             <span onclick="join.showModal()" onMouseOver="this.style.cursor='pointer'">JOIN</span>
             <span>Ziya-RXK</span>
-            <span onMouseOver="this.style.cursor='pointer'">LOGIN</span>
+            <span ondblclick="signin.showModal()" onMouseOver="this.style.cursor='pointer'">LOGIN</span>
         </header>
         <main>
             <dialog id="join">
@@ -29,6 +29,17 @@
                     <input id="reference" type="text" pattern="\d{10}" maxlength="10" minlength="10" placeholder="Please enter a cell number for reference . . ." name="reference" required><br><br>
                     <input type="submit" value="Submit" style="width: 97%; background-color: #073618; color: whitesmoke; border: none; cursor: pointer;"><br><br>
                     <h3 id="ziya_rxk_id" style="display: flex;justify-content: center;"></h3>
+                </form>
+            </dialog>
+            <dialog id="signin">
+                <p onclick="signin.close()" onMouseOver="this.style.cursor='pointer'">&times</p>
+                <h2>Login form</h2>
+                <form id="login_form" onsubmit="login(event)">
+                    <label for="username">Username:</label><br>
+                    <input id="username" type="text" placeholder="Please enter your username . . ." name="username" required><br><br>
+                    <label for="password">Password:</label><br>
+                    <input id="password" type="password" pattern="[a-zA-Z0-9]+" placeholder="Please enter your password . . ." name="password" required><br><br>
+                    <input type="submit" value="Login" style="width: 97%; background-color: #073618; color: whitesmoke; border: none; cursor: pointer;"><br><br>
                 </form>
             </dialog>
             <div id="levels"> <!--navigation levels-->
