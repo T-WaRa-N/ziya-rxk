@@ -3,7 +3,7 @@ let id = ""
 
 // --------code communicating to the server----------------
 const comms_to_backend = async () => {
-    const res = await fetch("http://localhost:3001/test",{
+    const res = await fetch("/test",{
         method:"POST",
         headers:{
             "content-Type":"application/json"
@@ -22,7 +22,7 @@ const login = async (event) => {
     event.preventDefault()
     const form = event.target
     const formData = new FormData(form)
-    const res = await fetch("http://localhost:3001/login", {
+    const res = await fetch("/login", {
         method:'POST',
         headers:{
             "content-Type":"application/json"
@@ -56,7 +56,7 @@ const apply = async (event) => {
     display_id.style.fontSize = "15px"
     display_id.style.backgroundColor = "White"
     display_id.innerText = message
-    const res = await fetch("http://localhost:3001/apply", {
+    const res = await fetch("/apply", {
         method:'POST',
         headers:{
             "content-Type":"application/json"
