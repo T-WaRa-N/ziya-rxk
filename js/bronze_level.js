@@ -3,13 +3,17 @@ let id = ""
 
 // --------code communicating to the server----------------
 const comms_to_backend = async () => {
+    if (document.getElementById('bronze-cn').value.length < 10) {
+        alert("Please enter a valid cellphone number to play")
+        return
+    }
     const res = await fetch("/test",{
         method:"POST",
         headers:{
             "content-Type":"application/json"
         },
         body:JSON.stringify({
-          ziyarxk:"ziyarxk frontend side just arrived"  
+          ziyarxk:document.getElementById('bronze-cn').value  
         })
     })
     const data = await res.json()
