@@ -7,18 +7,18 @@ const comms_to_backend = async () => {
         alert("Please enter a valid cellphone number to play")
         return
     }
-    const res = await fetch("/test",{
+    const res = await fetch("/play",{
         method:"POST",
         headers:{
             "content-Type":"application/json"
         },
         body:JSON.stringify({
-          ziyarxk:document.getElementById('bronze-cn').value  
+          phone:document.getElementById('bronze-cn').value,
+          level:"bronze"  
         })
     })
     const data = await res.json()
     if(data.server) alert(data.server)
-    else alert("No data received from ZiyaRXK server")
 } 
 
 //----------------------login--------------------------
