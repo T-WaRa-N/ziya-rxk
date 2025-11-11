@@ -20,12 +20,19 @@ const comms_to_backend = async () => {
     const data = await res.json()
     if(data.server){
         document.getElementById('bronze-cn').value = ""
-        console.log(data.currently_playing)
-        let data_length = JSON.parse(data.currently_playing)
-        console.log(data_length.length)
         alert(data.server)
     }
 } 
+
+const eventSource = new EventSource('/events');
+eventSource.onmessage = (event) => {
+    const data = JSON.parse(event.data)
+    console.log('SSE event received:', data)
+};
+
+// eventSource.onerror = (err) => {
+//     console.error('SSE error:', err)
+// };
 
 // ---------------------login-------------------------
 const login = async (event) => {
@@ -85,22 +92,37 @@ const apply = async (event) => {
     // document.getElementById("join").close()
 }
 
-//----------------------- ---------------------
-    
-    // if (contact.length == 10){
-    //     // for(let j = 9; j >= 0; j--){
-    //     //     if(contact[j]== '0') id +="R"
-    //     //     else if(bookingList[i - 1].cellNumber[j] == '1') reversedText +="X"
-    //     //     else if(bookingList[i - 1].cellNumber[j] == '2') reversedText +="K"
-    //     //     else if(bookingList[i - 1].cellNumber[j] == '5') reversedText +="Z"
-    //     //     else reversedText += bookingList[i - 1].cellNumber[j]
-    //     // }
-    //     alert(contact)
-    // }
+//----------------------- --------------------- 
 
 //client status tracker
 const bookingList = []
 const refundMembers = []
+if (bookingList.length == 26) {
+    // function to refresh the queue
+}
+
+// // all iterations should continue after 2 seconds
+// const delay = async (ms) => new Promise(resolve => setTimeout(resolve, ms))
+// counter_temp = 0
+// // create a loop for each stage of ziya rxk and this is bronze level
+// while(counter_temp < 3){
+
+//     const playing_members = async () => {
+//         const res = await fetch("/now_playing", {
+//             method:'GET',
+//             headers:{
+//                 "content-Type":"application/json"
+//             },
+//         })
+//         const response = await res.json()
+//         if( response.server) alert(response.server)
+//     }
+//     playing_members()
+//     await delay(2000) //2 seconds delay between each iteration
+//     print(counter_temp)
+//     counter_temp++
+//     if(bookingList.length == 26) break
+// }
 
 //person class and do not forget to keep the record of successful levels in the database
 class Person{
@@ -117,14 +139,6 @@ class Person{
     }
 }
 
-// let cellNumberInput = document.getElementById('bronze-cn')                          // getting the input field value 
-
-// let typedNumber = ""                                                                // placeholder for new entered numbers
-
-//input onchange function
-// let cellNumberHandler = () => { typedNumber = cellNumberInput.value }               // function triggered by the onchange to update the typedNumber
-
-// let enlistingButton = document.getElementById('click-enlist')                       // cell number enlisting button assign to the variable
 
 // cell number enlisting function
 const enlistingFunc = () => {
