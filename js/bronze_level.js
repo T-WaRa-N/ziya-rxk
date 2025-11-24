@@ -24,17 +24,16 @@ const comms_to_backend = async () => {
     }
 } 
 
+
+// server sent events listener
 const eventSource = new EventSource('/events');
 eventSource.onmessage = (event) => {
     const data = JSON.parse(event.data)
     console.log('SSE event received:', data)
 };
 
-// eventSource.onerror = (err) => {
-//     console.error('SSE error:', err)
-// };
 
-// ---------------------login-------------------------
+// login
 const login = async (event) => {
     event.preventDefault()
     const form = event.target
@@ -89,12 +88,10 @@ const apply = async (event) => {
     if( response.server) alert(response.server)
     else alert("No data received from ZiyaRXK server")
     form.reset()
-    // document.getElementById("join").close()
 }
 
-//----------------------- --------------------- 
 
-//client status tracker
+// client status tracker
 const bookingList = []
 const refundMembers = []
 if (bookingList.length == 26) {
