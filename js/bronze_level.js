@@ -87,67 +87,87 @@ const apply = async (event) => {
 const bookingList = []
 const refundMembers = []
 
+// initialize playing players in local storage
 if(!localStorage.getItem('playing_players')) localStorage.setItem('playing_players', '[]')
 
 // Table population function
 const enlistingFunc = (online_players) => {
-   
+    let listOfPlayers = JSON.parse(online_players[0])
+    console.log(listOfPlayers.length)
+    // console.log(listOfPlayers[1].player_id)
+    // let online_players_length = online_players.length + ' array length ' + online_players[1]
+    // return online_players_length
     // Enlisting successfully booked numbers in the first column of the table
-    if(online_players.length < 26){
+    if(listOfPlayers.length < 26){
       
         // status update for all passengers as the list
         let listCounter = 1
-        while(listCounter <= online_players.length){  
-
+        while(listCounter <= listOfPlayers.length){  
             let spanIdC1 = `${listCounter}` + "1";
             let spanIdC2 = `${listCounter}` + "2";
             let spanIdC3 = `${listCounter}` + "3";
            
-            if(online_players.length < 6){
+            if(listOfPlayers.length < 6){
 
-                document.getElementById(spanIdC1).innerText = online_players[listCounter - 1].player_id;
+                document.getElementById(spanIdC1).innerText = listOfPlayers[listCounter-1].player_id;
                 document.getElementById(spanIdC2).innerText = '';
-                document.getElementById(spanIdC3).innerText = "booking...";
+                document.getElementById(spanIdC3).innerText = "booking";
                 
                 listCounter++
 
-            }else if(bookingList.length > 5 && bookingList.length < 11){
+            }else if(listOfPlayers.length > 5 && listOfPlayers.length < 11){
                 if (listCounter < 6){
-                    document.getElementById(spanIdC3).innerText = "checking-in..."
+                    document.getElementById(spanIdC1).innerText = listOfPlayers[listCounter-1].player_id;
+                    document.getElementById(spanIdC2).innerText = '';
+                    document.getElementById(spanIdC3).innerText = "check-in"
                     listCounter++
                 }
                 else {
-                    document.getElementById(spanIdC3).innerText = "booking..."
+                    document.getElementById(spanIdC1).innerText = listOfPlayers[listCounter-1].player_id;
+                    document.getElementById(spanIdC2).innerText = '';
+                    document.getElementById(spanIdC3).innerText = "booking"
                     listCounter++
                 }
 
-            }else if(bookingList.length > 10 && bookingList.length < 16){
+            }else if(listOfPlayers.length > 10 && listOfPlayers.length < 16){
                 if (listCounter < 6){
-                    document.getElementById(spanIdC3).innerText = "boarding..."
+                    document.getElementById(spanIdC1).innerText = listOfPlayers[listCounter-1].player_id;
+                    document.getElementById(spanIdC2).innerText = '';
+                    document.getElementById(spanIdC3).innerText = "boarding"
                     listCounter++
                 }
                 else{
-                    document.getElementById(spanIdC3).innerText = "booking..."
+                    document.getElementById(spanIdC1).innerText = listOfPlayers[listCounter-1].player_id;
+                    document.getElementById(spanIdC2).innerText = '';
+                    document.getElementById(spanIdC3).innerText = "booking"
                     listCounter++
                 }
 
-            }else if(bookingList.length > 15 && bookingList.length < 21){
+            }else if(online_players[0].length > 15 && online_players[0].length < 21){
                 if (listCounter < 6){
-                    document.getElementById(spanIdC3).innerText = "flying..."
+                    document.getElementById(spanIdC1).innerText = listOfPlayers[listCounter-1].player_id;
+                    document.getElementById(spanIdC2).innerText = '';
+                    document.getElementById(spanIdC3).innerText = "flying"
                     listCounter++
                 }
                 else{
-                    document.getElementById(spanIdC3).innerText = "booking..."
+                    document.getElementById(spanIdC1).innerText = listOfPlayers[listCounter-1].player_id;
+                    document.getElementById(spanIdC2).innerText = '';
+                    document.getElementById(spanIdC3).innerText = "booking"
                     listCounter++
                 }
 
             }else{
                 if (listCounter < 6){
-                    document.getElementById(spanIdC3).innerText = "landing..."
+                    document.getElementById(spanIdC1).innerText = listOfPlayers[listCounter-1].player_id;
+                    document.getElementById(spanIdC2).innerText = '';
+                    document.getElementById(spanIdC3).innerText = "landing"
                     listCounter++
                 }
                 else{
-                    document.getElementById(spanIdC3).innerText = "booking..."
+                    document.getElementById(spanIdC1).innerText = listOfPlayers[listCounter-1].player_id;
+                    document.getElementById(spanIdC2).innerText = '';
+                    document.getElementById(spanIdC3).innerText = "booking"
                     listCounter++
                 }
             }
@@ -160,8 +180,9 @@ const enlistingFunc = (online_players) => {
 const eventSource = new EventSource('/events');
 eventSource.onmessage = (event) => {
     localStorage.setItem('playing_players', event.data)
-    console.log('new players is in')
+    let playing_players = JSON.parse(localStorage.getItem('playing_players'))
+    console.log(JSON.parse(playing_players[0]))
+    enlistingFunc(playing_players)
 };
 
-let playing_players = JSON.parse(localStorage.getItem('playing_players'))
- 
+ console.log("bronze level script loaded")
