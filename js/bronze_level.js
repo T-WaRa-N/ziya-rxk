@@ -1,5 +1,46 @@
 //bronze level javaScript file (i.e. index html file)
 let id = ""
+document.addEventListener('DOMContentLoaded', () => {
+    const bronze_cn = document.getElementById('click-enlist')
+    const joinButton = document.getElementById('joinButton')
+    const loginButton = document.getElementById('loginButton')
+    const loginDialog = document.getElementById('logingDialog')
+
+    // hover effects
+    joinButton.onmouseover = () => {
+        joinButton.style.cursor = 'pointer'
+    }
+
+    loginButton.onmouseover = () => {
+        loginButton.style.cursor = 'pointer'
+    }   
+
+    loginDialog.onmouseover = () => {
+        loginDialog.style.cursor = 'pointer'
+    }
+
+    // player enlistment
+    bronze_cn.addEventListener('click', () => {
+        comms_to_backend("bronze")
+
+    })
+
+    // dialog box triggers
+    joinButton.addEventListener('click', () => {
+        join.showModal()
+    })
+
+    loginButton.addEventListener('dblclick', () => {
+        signin.showModal()
+    })
+
+    //dialog box close button
+    loginDialog.addEventListener('click', () => {
+        signin.close()
+    })
+
+
+});
 
 // --------code communicating to the server----------------
 const comms_to_backend = async (level) => {
@@ -93,11 +134,9 @@ if(!localStorage.getItem('playing_players')) localStorage.setItem('playing_playe
 // Table population function
 const enlistingFunc = (online_players) => {
     let listOfPlayers = JSON.parse(online_players[0])
-    console.log(listOfPlayers.length)
-    // console.log(listOfPlayers[1].player_id)
-    // let online_players_length = online_players.length + ' array length ' + online_players[1]
-    // return online_players_length
-    // Enlisting successfully booked numbers in the first column of the table
+    console.log('now playing: ' + listOfPlayers.length)
+    console.log('online: ' + online_players[1])
+   
     if(listOfPlayers.length < 26){
       
         // status update for all passengers as the list
@@ -179,10 +218,11 @@ const enlistingFunc = (online_players) => {
 // server sent events listener
 const eventSource = new EventSource('/events');
 eventSource.onmessage = (event) => {
-    localStorage.setItem('playing_players', event.data)
-    let playing_players = JSON.parse(localStorage.getItem('playing_players'))
+    //localStorage.setItem('playing_players', event.data)
+    //let playing_players = JSON.parse(localStorage.getItem('playing_players'))
+    let playing_players = JSON.parse(event.data)
     console.log(JSON.parse(playing_players[0]))
-    enlistingFunc(playing_players)
+    //enlistingFunc(playing_players)
 };
 
- console.log("bronze level script loaded")
+console.log("bronze level script loaded")

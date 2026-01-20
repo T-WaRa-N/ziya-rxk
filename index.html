@@ -10,9 +10,9 @@
     </head>
     <body>
         <header>
-            <span onclick="join.showModal()" onMouseOver="this.style.cursor='pointer'">JOIN</span>
+            <span id="joinButton">JOIN</span>
             <span>Ziya-RXK</span>
-            <span ondblclick="signin.showModal()" onMouseOver="this.style.cursor='pointer'">LOGIN</span>
+            <span id="loginButton">LOGIN</span>
         </header>
         <main>
             <dialog id="join">
@@ -32,7 +32,7 @@
                 </form>
             </dialog>
             <dialog id="signin">
-                <p onclick="signin.close()" onMouseOver="this.style.cursor='pointer'">&times</p>
+                <p id="logingDialog">&times</p>
                 <h2>Login form</h2>
                 <form id="login_form" onsubmit="login(event)">
                     <label for="username">Username:</label><br>
@@ -238,7 +238,7 @@
                                     </tr>
                                 </table><br/>
                                 <input type="number" placeholder="ENTER CELL NUMBER AND PLAY" id="bronze-cn"><br>
-                                <input type="button" value="PLAY" id="click-enlist" onclick="comms_to_backend('bronze')"><br>
+                                <input type="button" value="PLAY" id="click-enlist"><br>
                                 <!-- enlistingFunc() -->
                                 <input type="button" value="HOW THIS WORKS" id="explanation">
                             </div>
