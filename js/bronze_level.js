@@ -1,10 +1,23 @@
-//bronze level javaScript file (i.e. index html file)
-let id = ""
+
 document.addEventListener('DOMContentLoaded', () => {
     const bronze_cn = document.getElementById('click-enlist')
     const joinButton = document.getElementById('joinButton')
     const loginButton = document.getElementById('loginButton')
     const loginDialog = document.getElementById('logingDialog')
+    const joinDialog = document.getElementById('joinDialog')
+    const join = document.getElementById('join')
+    const signin = document.getElementById('signin')
+    const applicationForm = document.getElementById('application_form')
+    const loginForm = document.getElementById('login_form')
+
+    // form submissions
+    applicationForm.onsubmit = (event) => {
+        apply(event)
+    }
+
+    loginForm.onsubmit = (event) => {
+        login(event)
+    }
 
     // hover effects
     joinButton.onmouseover = () => {
@@ -18,6 +31,27 @@ document.addEventListener('DOMContentLoaded', () => {
     loginDialog.onmouseover = () => {
         loginDialog.style.cursor = 'pointer'
     }
+
+    joinDialog.onmouseover = () => {
+        joinDialog.style.cursor = 'pointer'
+    }
+
+    //click events
+    joinButton.addEventListener('click', () => {
+        join.showModal()
+    })
+
+    joinDialog.addEventListener('click', () => {
+        join.close()
+    })
+
+    loginButton.addEventListener('dbclick', () => {
+        signin.showModal()
+    })
+
+    loginDialog.addEventListener('click', () => {
+        signin.close()
+    })
 
     // player enlistment
     bronze_cn.addEventListener('click', () => {
@@ -41,6 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
+
+
+//bronze level javaScript file (i.e. index html file)
+let id = ""
 
 // --------code communicating to the server----------------
 const comms_to_backend = async (level) => {

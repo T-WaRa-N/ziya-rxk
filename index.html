@@ -16,9 +16,9 @@
         </header>
         <main>
             <dialog id="join">
-                <p onclick="join.close()" onMouseOver="this.style.cursor='pointer'">&times</p>
+                <p id="joinDialog">&times</p>
                 <h2>Application form</h2>
-                <form id="application_form" onsubmit="apply(event)">
+                <form id="application_form">
                     <label for="name">Name:</label><br>
                     <input id="name" type="text" placeholder="Please enter your name . . ." name="name" required><br><br>
                     <label for="surname">Surname:</label><br>
@@ -34,7 +34,7 @@
             <dialog id="signin">
                 <p id="logingDialog">&times</p>
                 <h2>Login form</h2>
-                <form id="login_form" onsubmit="login(event)">
+                <form id="login_form">
                     <label for="username">Username:</label><br>
                     <input id="username" type="text" placeholder="Please enter your username . . ." name="username" required><br><br>
                     <label for="password">Password:</label><br>
@@ -239,7 +239,6 @@
                                 </table><br/>
                                 <input type="number" placeholder="ENTER CELL NUMBER AND PLAY" id="bronze-cn"><br>
                                 <input type="button" value="PLAY" id="click-enlist"><br>
-                                <!-- enlistingFunc() -->
                                 <input type="button" value="HOW THIS WORKS" id="explanation">
                             </div>
                         </div>
