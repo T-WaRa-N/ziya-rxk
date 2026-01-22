@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         join.close()
     })
 
-    loginButton.addEventListener('dbclick', () => {
+    loginButton.addEventListener('dblclick', () => {
         signin.showModal()
     })
 
@@ -62,10 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // dialog box triggers
     joinButton.addEventListener('click', () => {
         join.showModal()
-    })
-
-    loginButton.addEventListener('dblclick', () => {
-        signin.showModal()
     })
 
     //dialog box close button
