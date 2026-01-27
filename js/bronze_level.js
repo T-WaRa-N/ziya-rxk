@@ -69,9 +69,19 @@ document.addEventListener('DOMContentLoaded', () => {
         signin.close()
     })
 
-
 });
 
+// make sure you fetch latest playing players on load
+const fetchPlayingPlayers = async () => {
+    const res = await fetch('/playing-list',{
+        method: 'GET',
+        headers: {
+            'Content-Type':'application/json'
+        }
+    })
+    const data = await res.text(); 
+    return JSON.parse(data);
+}
 
 //bronze level javaScript file (i.e. index html file)
 let id = ""
@@ -116,8 +126,7 @@ const login = async (event) => {
         })
     })
     form.reset()
-    document.getElementById("signin").close()
-    
+    document.getElementById("signin").close()  
 }
 
 // new application form submission
@@ -162,15 +171,11 @@ const apply = async (event) => {
 const bookingList = []
 const refundMembers = []
 
-// initialize playing players in local storage
-if(!localStorage.getItem('playing_players')) localStorage.setItem('playing_players', '[]')
 
 // Table population function
 const enlistingFunc = (online_players) => {
-    let listOfPlayers = JSON.parse(online_players[0])
-    console.log('now playing: ' + listOfPlayers.length)
-    console.log('online: ' + online_players[1])
-   
+    let listOfPlayers = online_players
+
     if(listOfPlayers.length < 26){
       
         // status update for all passengers as the list
@@ -251,12 +256,13 @@ const enlistingFunc = (online_players) => {
 
 // server sent events listener
 const eventSource = new EventSource('/events');
-eventSource.onmessage = (event) => {
-    //localStorage.setItem('playing_players', event.data)
-    //let playing_players = JSON.parse(localStorage.getItem('playing_players'))
-    let playing_players = JSON.parse(event.data)
-    console.log(JSON.parse(playing_players[0]))
-    //enlistingFunc(playing_players)
+eventSource.onmessage = async (event) => {  
+    let playings = await fetchPlayingPlayers()
+    let online_players = JSON.parse(event.data)[1][0]
+    console.log(playings);
+    console.log(online_players + ' players online');
+    enlistingFunc(playings)
 };
 
 console.log("bronze level script loaded")
+
