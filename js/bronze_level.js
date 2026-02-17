@@ -179,25 +179,22 @@ const enlistingFunc = (online_players) => {
             let spanIdC1 = `${listCounter}` + "1";
             let spanIdC2 = `${listCounter}` + "2";
             let spanIdC3 = `${listCounter}` + "3";
-           
             if(listOfPlayers.length < 6){
-
                 document.getElementById(spanIdC1).innerText = listOfPlayers[listCounter-1].player_id;
-                document.getElementById(spanIdC2).innerText = '';
+                document.getElementById(spanIdC2).innerText = listOfPlayers[listCounter-1].wins + '/' + (listOfPlayers[listCounter-1].losses + listOfPlayers[listCounter-1].wins);
                 document.getElementById(spanIdC3).innerText = "booking";
-                
                 listCounter++
 
             }else if(listOfPlayers.length > 5 && listOfPlayers.length < 11){
                 if (listCounter < 6){
                     document.getElementById(spanIdC1).innerText = listOfPlayers[listCounter-1].player_id;
-                    document.getElementById(spanIdC2).innerText = '';
+                    document.getElementById(spanIdC2).innerText = listOfPlayers[listCounter-1].wins + '/' + (listOfPlayers[listCounter-1].losses + listOfPlayers[listCounter-1].wins);
                     document.getElementById(spanIdC3).innerText = "check-in"
                     listCounter++
                 }
                 else {
                     document.getElementById(spanIdC1).innerText = listOfPlayers[listCounter-1].player_id;
-                    document.getElementById(spanIdC2).innerText = '';
+                    document.getElementById(spanIdC2).innerText = listOfPlayers[listCounter-1].wins + '/' + (listOfPlayers[listCounter-1].losses + listOfPlayers[listCounter-1].wins);
                     document.getElementById(spanIdC3).innerText = "booking"
                     listCounter++
                 }
@@ -205,13 +202,13 @@ const enlistingFunc = (online_players) => {
             }else if(listOfPlayers.length > 10 && listOfPlayers.length < 16){
                 if (listCounter < 6){
                     document.getElementById(spanIdC1).innerText = listOfPlayers[listCounter-1].player_id;
-                    document.getElementById(spanIdC2).innerText = '';
+                    document.getElementById(spanIdC2).innerText = listOfPlayers[listCounter-1].wins + '/' + (listOfPlayers[listCounter-1].losses + listOfPlayers[listCounter-1].wins);
                     document.getElementById(spanIdC3).innerText = "boarding"
                     listCounter++
                 }
                 else{
                     document.getElementById(spanIdC1).innerText = listOfPlayers[listCounter-1].player_id;
-                    document.getElementById(spanIdC2).innerText = '';
+                    document.getElementById(spanIdC2).innerText = listOfPlayers[listCounter-1].wins + '/' + (listOfPlayers[listCounter-1].losses + listOfPlayers[listCounter-1].wins);
                     document.getElementById(spanIdC3).innerText = "booking"
                     listCounter++
                 }
@@ -219,13 +216,13 @@ const enlistingFunc = (online_players) => {
             }else if(online_players[0].length > 15 && online_players[0].length < 21){
                 if (listCounter < 6){
                     document.getElementById(spanIdC1).innerText = listOfPlayers[listCounter-1].player_id;
-                    document.getElementById(spanIdC2).innerText = '';
+                    document.getElementById(spanIdC2).innerText = listOfPlayers[listCounter-1].wins + '/' + (listOfPlayers[listCounter-1].losses + listOfPlayers[listCounter-1].wins);
                     document.getElementById(spanIdC3).innerText = "flying"
                     listCounter++
                 }
                 else{
                     document.getElementById(spanIdC1).innerText = listOfPlayers[listCounter-1].player_id;
-                    document.getElementById(spanIdC2).innerText = '';
+                    document.getElementById(spanIdC2).innerText = listOfPlayers[listCounter-1].wins + '/' + (listOfPlayers[listCounter-1].losses + listOfPlayers[listCounter-1].wins);
                     document.getElementById(spanIdC3).innerText = "booking"
                     listCounter++
                 }
@@ -233,19 +230,20 @@ const enlistingFunc = (online_players) => {
             }else{
                 if (listCounter < 6){
                     document.getElementById(spanIdC1).innerText = listOfPlayers[listCounter-1].player_id;
-                    document.getElementById(spanIdC2).innerText = '';
+                    document.getElementById(spanIdC2).innerText = listOfPlayers[listCounter-1].wins + '/' + (listOfPlayers[listCounter-1].losses + listOfPlayers[listCounter-1].wins);
                     document.getElementById(spanIdC3).innerText = "landing"
                     listCounter++
                 }
                 else{
                     document.getElementById(spanIdC1).innerText = listOfPlayers[listCounter-1].player_id;
-                    document.getElementById(spanIdC2).innerText = '';
+                    document.getElementById(spanIdC2).innerText = listOfPlayers[listCounter-1].wins + '/' + (listOfPlayers[listCounter-1].losses + listOfPlayers[listCounter-1].wins);
                     document.getElementById(spanIdC3).innerText = "booking"
                     listCounter++
                 }
             }
         }
-
+    }else{
+    
     }
 } 
 
